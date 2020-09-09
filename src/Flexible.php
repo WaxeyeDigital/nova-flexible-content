@@ -277,10 +277,6 @@ class Flexible extends Field
      */
     public function isShownOnDetail(NovaRequest $request, $resource): bool
     {
-        $this->layouts = $this->layouts->each(function($layout) use ($request, $resource) {
-            $layout->filterForDetail($request, $resource);
-        });
-
         return parent::isShownOnDetail($request, $resource);
     }
 
