@@ -9,7 +9,8 @@
 
             <div
                 v-if="order.length > 0">
-                <form-nova-flexible-content-group
+                <draggable v-model="orderedGroups">
+                  <form-nova-flexible-content-group
                     v-for="(group, index) in orderedGroups"
                     :dusk="field.attribute + '-' + index"
                     :key="group.key"
@@ -23,7 +24,8 @@
                     @move-up="moveUp(group.key)"
                     @move-down="moveDown(group.key)"
                     @remove="remove(group.key)"
-                />
+                  />
+                </draggable>
             </div>
 
             <component
@@ -47,13 +49,14 @@
 import FullWidthField from './FullWidthField';
 import { FormField, HandlesValidationErrors } from 'laravel-nova';
 import Group from '../group';
+import draggable from 'vuedraggable'
 
 export default {
     mixins: [FormField, HandlesValidationErrors],
 
     props: ['resourceName', 'resourceId', 'resource', 'field'],
 
-    components: { FullWidthField },
+    components: { FullWidthField, draggable },
 
     computed: {
         layouts() {
