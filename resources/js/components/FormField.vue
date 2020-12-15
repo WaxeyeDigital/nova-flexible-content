@@ -194,7 +194,7 @@ export default {
 
         move(evt) {
           let index = evt.newIndex;
-          console.log(newIndex);
+          console.log(evt);
           this.order.splice(index - 1, 0, this.order.splice(index, 1)[0]);
         },
 
