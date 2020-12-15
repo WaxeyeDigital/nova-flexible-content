@@ -9,7 +9,7 @@
 
             <div
                 v-if="order.length > 0">
-                <draggable v-model="orderedGroups" handle=".group-title" @move="move">
+                <draggable v-model="orderedGroups" handle=".group-title" @change="move">
                   <form-nova-flexible-content-group
                     v-for="(group, index) in orderedGroups"
                     :dusk="field.attribute + '-' + index"
@@ -192,7 +192,7 @@ export default {
             }
         },
 
-        move(evt, orgEvt) {
+        move(evt) {
           console.log(evt);
         },
 
