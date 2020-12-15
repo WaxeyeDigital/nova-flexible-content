@@ -103,7 +103,7 @@ export default {
 
     computed: {
         titleStyle() {
-            let classes = ['border-t', 'border-r', 'border-60', 'rounded-tr-lg'];
+            let classes = ['border-t', 'border-r', 'border-60', 'rounded-tr-lg', 'group-title'];
             if (this.collapsed) {
                 classes.push('border-b rounded-br-lg');
             }
