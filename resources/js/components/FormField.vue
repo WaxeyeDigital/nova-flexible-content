@@ -195,7 +195,7 @@ export default {
         move(evt) {
           let oldIndex = evt.moved.oldIndex;
           let newIndex = evt.moved.newIndex;
-          console.log(evt);
+
           this.order.splice(newIndex, 0, this.order.splice(oldIndex, 1)[0]);
         },
 
