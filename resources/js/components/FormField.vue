@@ -9,7 +9,7 @@
 
             <div
                 v-if="order.length > 0">
-                <draggable v-model="orderedGroups">
+                <draggable v-model="orderedGroups" handle=".group-title">
                   <form-nova-flexible-content-group
                     v-for="(group, index) in orderedGroups"
                     :dusk="field.attribute + '-' + index"
